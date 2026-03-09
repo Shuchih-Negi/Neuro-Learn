@@ -78,7 +78,7 @@ sys.path.append("../ml")
 from nlp_model import NLPModel
 
 # ── Config ─────────────────────────────────────────────────────────────────────
-API_KEY = os.environ.get("GEMINI_API_KEY", "AIzaSyDkfYumsK1Z02i48fpCKlxhDQLTDdVdjbM")
+API_KEY = os.environ.get("GEMINI_API_KEY", "INSERT_YOUR_GEMINI_KEY")
 
 # Enhanced Gemini configuration
 gemini_config = GeminiConfig(
