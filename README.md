@@ -3,7 +3,7 @@
 
 ---
 
-## Screenshots
+## 🖥️ Preview
 
 ![Hero Screen](Frontend/src/assets/screenshots/ss1.png)
 ![Character Selection](Frontend/src/assets/screenshots/ss2.png)
