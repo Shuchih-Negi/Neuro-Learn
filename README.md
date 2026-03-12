@@ -3,10 +3,17 @@
 
 ---
 
+## Screenshots
+
+![Hero Screen](Frontend/src/assets/screenshots/ss1.png)
+![Character Selection](Frontend/src/assets/screenshots/ss2.png)
+![Adaptive Question](Frontend/src/assets/screenshots/ss3.png)
+
+---
+
 ## What Was Added (Language Expansion)
 
 NeuroLearn started as an adaptive math tutor. This expansion adds a full language learning pipeline while keeping every existing math endpoint intact.
-
 ```
 Original:   /api/next_question  /api/story  /api/feedback  /api/progress  /api/dashboard
 New:        /api/lang/*  (parallel namespace — no breaking changes)
@@ -44,7 +51,6 @@ New:        /api/lang/*  (parallel namespace — no breaking changes)
 ---
 
 ## File Structure
-
 ```
 NeuroLearn/
 │
@@ -67,6 +73,9 @@ NeuroLearn/
 ├── models/
 │   └── lstm_model.pt         ← your existing LSTM attention model
 │
+├── Frontend/
+│   └── src/assets/screenshots/  ← UI screenshots
+│
 ├── requirements.txt
 └── README.md
 ```
@@ -82,7 +91,6 @@ Returns all supported languages, exercise types, and skill tags.
 
 #### `POST /api/lang/next_question`
 Main endpoint. Full 5-agent pipeline.
-
 ```json
 {
   "character": "Luna",
@@ -117,7 +125,6 @@ Response includes:
 
 #### `POST /api/lang/story/generate`
 Immersion story in the target language.
-
 ```json
 {
   "character": "Luna",
@@ -130,7 +137,6 @@ Immersion story in the target language.
 
 #### `POST /api/lang/progress/update`
 Post after every answer. Updates mastery + spaced-rep schedule.
-
 ```json
 {
   "student_id": "student_001",
@@ -170,8 +176,6 @@ Full dashboard: accuracy, streaks, mastery radar, attention distribution, ADHD i
 
 ## Adaptive Logic
 
-The `ReasoningAgent` applies these rules (from the blueprint + Krashen):
-
 | Condition | Action |
 |-----------|--------|
 | mastery < 0.35 | `reinforce` — repeat same skill, easier type |
@@ -185,7 +189,6 @@ The `ReasoningAgent` applies these rules (from the blueprint + Krashen):
 ---
 
 ## Setup
-
 ```bash
 # 1. Install dependencies
 pip install -r requirements.txt
@@ -222,3 +225,4 @@ Spanish · French · German · Italian · Portuguese · Japanese · Mandarin · 
 ---
 
 *Built for hackathons, EdTech research, and cognitive learning innovation.*
+*Deployed and tested on Node.js 18+ | Python 3.10+*
